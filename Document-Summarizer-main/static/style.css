@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #006663, #008080, #004c4c, #111111);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+.mainwrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px; /* to avoid overlap with header */
+    padding-bottom: 60px; /* to avoid overlap with footer */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    margin-top: 250px;
+    margin-left: 350px;
+
+}
+
+.head {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.footer {
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1em 0;
+    display: block;
+    margin: 0;
+    unicode-bidi: isolate;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="file"], input[type="submit"] {
+    margin-left: 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #008080;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-content: center;
+}
+input[type="submit"] {
+    margin-top: 10px;
+    background-color: #26b9efae;
+    width: 100px;
+    margin-left: 190px;
+}
+
+input[type="file"]:hover, input[type="submit"]:hover {
+    background-color: #006663;
+}
+
+.output {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.output p {
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+
+Your HTML structure looks good, but to ensure that the text doesn't overflow the container, you should also consider using CSS to properly handle the pre element. By default, the pre element preserves whitespace and can cause overflow issues. Adding some CSS to handle the pre element within the .container1 can help.
+
+Here's the updated CSS and HTML:
+
+Updated CSS:
+css
+Copy code
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto; /* Center container horizontally */
+    overflow: hidden; /* Handle overflow */
+    word-wrap: break-word; /* Ensure text wraps properly */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+pre {
+    white-space: pre-wrap; /* Make sure pre text wraps */
+    word-wrap: break-word; /* Ensure long words break */
+    color: white; /* Make text color readable against the background */
+}
+.container2{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 25px 25px;
+    margin: 20px;
+    
+}
